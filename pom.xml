@@ -5,10 +5,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.sumit.webapp</groupId>
-    <artifactId>spring-boot-demo</artifactId>
+    <artifactId>spring-boot-project</artifactId>
     <version>1.0</version>
 
-    <name>spring-boot-demo</name>
+    <name>spring-boot-project</name>
     <url></url>
 
     <parent>
@@ -51,7 +51,7 @@
 
     <build>
 
-        <finalName>spring-boot-web</finalName>
+        <finalName>spring-boot-webapp</finalName>
 
         <plugins>
             <plugin>
