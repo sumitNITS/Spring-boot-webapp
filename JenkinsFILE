@@ -1,9 +1,5 @@
 pipeline {
-  agent {
-    docker {
-      image 'sumit0058/springbootwebapp:v1'
-    }
-  }
+  agent { dockerfile true }
   stages {
     stage('Checkout') {
       steps {
@@ -30,7 +26,7 @@ pipeline {
     }
     stage('Build and Push Docker Image') {
       environment {
-        DOCKER_IMAGE = "sumit0058/cicd-work-done:${BUILD_NUMBER}"
+        DOCKER_IMAGE = "sumit0058/springbootwebapp:v1"
         // DOCKERFILE_LOCATION = "Dockerfile"
         REGISTRY_CREDENTIALS = credentials('dockerhub-cred')
       }
