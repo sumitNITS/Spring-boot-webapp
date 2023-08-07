@@ -1,10 +1,9 @@
 pipeline {
-  agent 
-  // {
-  //   docker {
-  //     image 'sumit0058/springbootwebapp:v1'
-  //   }
-  // }
+  agent {
+    docker {
+      image 'sumit0058/springbootwebapp:v1'
+    }
+  }
   stages {
     stage('Checkout') {
       steps {
