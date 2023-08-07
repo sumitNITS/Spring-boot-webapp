@@ -2,7 +2,6 @@ pipeline {
   agent {
     docker {
       image 'sumit0058/springbootwebapp:v1'
-      args '--user sifyadm -v /var/run/docker.sock:/var/run/docker.sock' // mount Docker socket to access the host's Docker daemon
     }
   }
   stages {
