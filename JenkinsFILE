@@ -36,10 +36,7 @@ pipeline {
       steps {
         script {
             def dockerImage = docker.build(DOCKER_IMAGE_NAME)
-            withCredentials([usernamePassword(credentialsId: 'dockerhub-cred', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
-              docker.withRegistry('https://index.docker.io/v1/', 'dockerhub-cred') {
-                  sh 'docker login -u $DOCKER_USER -p $DOCKER_PASS'
-            // docker.withRegistry('https://index.docker.io/v1/', "dockerhub-cred") {
+            docker.withRegistry('https://index.docker.io/v1/', "dockerhub-cred") {
                 dockerImage.push()
             }
         }
@@ -65,5 +62,5 @@ pipeline {
     //         }
         }
   //   }
-  }
+  // }
 }
