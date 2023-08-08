@@ -28,20 +28,20 @@ pipeline {
       }
     }
 
-    // stage('Build and Push Docker Image') {
-    //   environment {
-    //     DOCKER_IMAGE_NAME = "sumit0058/springbootwebapp:v1-${env.BUILD_NUMBER}"
-    //     REGISTRY_CREDENTIALS = credentials('dockerhub')
-    //   }
-    //   steps {
-    //     script {
-    //         def dockerImage = docker.build(DOCKER_IMAGE_NAME)
-    //         withDockerRegistry(credentialsId: 'dockerhub', url: 'https://index.docker.io/v1/') {
-    //         // docker.withRegistry('https://index.docker.io/v1/', "dockerhub") {
-    //             dockerImage.push()
-    //         }
-    //     }
-    //   }
-    // }
+    stage('Build and Push Docker Image') {
+      environment {
+        DOCKER_IMAGE_NAME = "sumit0058/springbootwebapp:v1-${env.BUILD_NUMBER}"
+        REGISTRY_CREDENTIALS = credentials('dockerhub')
+      }
+      steps {
+        script {
+            def dockerImage = docker.build(DOCKER_IMAGE_NAME)
+            withDockerRegistry(credentialsId: 'dockerhub', url: 'https://index.docker.io/v1/') {
+            // docker.withRegistry('https://index.docker.io/v1/', "dockerhub") {
+                dockerImage.push()
+            }
+        }
+      }
+    }
   }
 }
