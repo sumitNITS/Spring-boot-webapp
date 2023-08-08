@@ -3,13 +3,13 @@ pipeline {
 
   stages {
 
-    stage('Build Docker Image') {
+    stage('Build and Push Docker Image') {
       steps {
         script {
             def dockerImage = docker.build("sumit0058/springbootwebapp:v1-${env.BUILD_NUMBER}")
-            docker.withRegistry("https://hub.docker.com/", "dockerhub-cred") {
-              dockerImage.push()
-        }
+        //     docker.withRegistry("https://hub.docker.com/", "dockerhub-cred") {
+        //       dockerImage.push()
+        // }
       }
     }
 
