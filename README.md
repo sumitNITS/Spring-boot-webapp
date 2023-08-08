@@ -4,6 +4,16 @@ This is a Sprint boot web application that has been built using Maven.
 
 Follow the link for referrence: https://spring.io/guides/gs/spring-boot/
 
+### Tools used in this project
+
+- Git
+- Maven
+- Jenkins
+- Sonarqube
+- Docker
+- Kubernetes
+- Argo CD
+
 ### Instructions to run this project locally
 
 - Clone this project using the command
