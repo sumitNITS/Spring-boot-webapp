@@ -8,7 +8,6 @@ pipeline {
         script {
             def dockerImage = docker.build("sumit0058/springbootwebapp:v1-${env.BUILD_NUMBER}")
         }
-
       }
     }
   }
