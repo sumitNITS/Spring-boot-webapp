@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: spring-boot-webapp
-        image: sumit0058/springbootwebapp:11
+        image: sumit0058/springbootwebapp:replaceTag
         ports:
         - containerPort: 8081
