@@ -4,6 +4,16 @@ This is a Sprint boot web application that has been built using Maven.
 
 Follow the link for referrence: https://spring.io/guides/gs/spring-boot/
 
+One can use this project to run locally or using docker image and thus as a container and as well as in kubernetes cluster.
+
+You can also find Jenkinsfile for the Jenkins pipeline where it is basically performing the below tasks
+
+- Building the docker image with build number 
+- Building and testing the code by calling maven
+- Performing code analysis in sonarqube
+- Pushing the newly build docker image to docker hub
+- Updating the K8s manifests file with the unique build number
+
 ### Tools used in this project
 
 - Git
