@@ -14,7 +14,7 @@ You can also find Jenkinsfile for the Jenkins pipeline where it is basically per
 - Pushing the newly build docker image to docker hub
 - Updating the K8s manifests file with the unique build number
 
-### Tools used in this project
+### Tools used in this proje
 
 - Git
 - Maven
