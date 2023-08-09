@@ -56,6 +56,9 @@ pipeline {
                     git config user.name "Sumit Kumar Das"
                     BUILD_NUMBER=${BUILD_NUMBER}
                     sed -i "s/replaceTag/${BUILD_NUMBER}/g" app-manifests/deployment.yml
+                    git add app-manifests/deployment.yml
+                    git commit -m "Updated image to version ${BUILD_NUMBER}"
+                    git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
                 '''
             }
         }
@@ -63,6 +66,3 @@ pipeline {
   }
 }
 
-// git add app-manifests/deployment.yml
-// git commit -m "Updated image to version ${BUILD_NUMBER}"
-// git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
